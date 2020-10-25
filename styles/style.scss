@@ -1,0 +1,84 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+$mainFont: 'Manrope', sans-serif;
+$myfontWeight: 600;
+@mixin flexSpace-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1.8%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    height: 100vh;
+    margin: auto 2%;
+    font-family: $mainFont;
+    .section__title {
+        font-size: 30px;
+        margin-top: 40px;
+    }
+    .section__body {
+        width: 100%;
+        position: relative;
+        .section__row1 {
+            @include flexSpace-around;
+            .section__card1, .section__card2, .section__card3 {
+                display: flex;
+                flex-direction: column;
+                .section__img-card1, .section__img-card2, .section__img-card3 {
+                    border-radius: 8px;
+                    width: 100%;
+                    height: auto;
+                }
+                .section__description-card1, .section__description-card2, .section__description-card3 {
+                    font-weight: $myfontWeight;
+                }
+            }
+        }
+        .section__button {
+            background: #FFDD66;
+            border-radius: 4px;
+            color: #282828;
+            position: absolute;
+            text-decoration: none;
+            right: 45%;
+            border: none;
+            width: 125px;
+            height: 32px;
+            font-size: 16px;
+            .section__btn-link {
+                text-decoration: none;
+            }
+        }
+        .section__row2 {
+            margin-top: 43px;
+            padding-bottom: 50px;              
+             display: grid;
+             grid-template-columns: 50% 50%;
+             grid-auto-rows: minmax(300px, auto);
+             grid-column-gap: 20px;
+           .section__row2-desc-title {
+            font-weight: $myfontWeight;
+            font-size: 18px;
+           }
+          
+           .section__bigger-img {
+               object-fit: scale-down;
+               max-width: 100%;
+               max-height: 100%;
+               border-radius: 8px;
+           }
+           .section__row2-expaination {
+               font-size: 14px;
+           }
+        }
+    }
+}
+@import "./mediaquery";
